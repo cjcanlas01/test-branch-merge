@@ -17,7 +17,7 @@ jobs:
           target_branch: mad-bot-develop
           github_token: ${{ github.token }}
 
-      - name: Merge mad-bot-develop -> mad-merge-master
+      - name: Merge mad-bot-develop -> mad-bot-master
         uses: devmasx/merge-branch@master
         with:
           type: now
