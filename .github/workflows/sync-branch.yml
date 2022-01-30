@@ -1,0 +1,26 @@
+name: Sync multiple branches
+on:
+  push:
+    branches:
+      - "master"
+jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge master -> mad-bot-develop
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: master
+          target_branch: mad-bot-develop
+          github_token: ${{ github.token }}
+
+      - name: Merge mad-bot-develop -> mad-merge-master
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: mad-bot-develop
+          target_branch: mad-merge-master
+          github_token: ${{ github.token }}
