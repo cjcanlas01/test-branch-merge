@@ -22,5 +22,5 @@ jobs:
         with:
           type: now
           from_branch: mad-bot-develop
-          target_branch: mad-merge-master
+          target_branch: mad-bot-master
           github_token: ${{ github.token }}
